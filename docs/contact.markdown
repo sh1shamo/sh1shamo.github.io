@@ -5,5 +5,5 @@ permalink: /contact/
 background: '/img/bg-contact.jpg'
 ---
 
-[Twitter - @sh15ham0](https://twitter.com/sh15ham0)  
+[Twitter (Current: X) - @sh15ham0](https://x.com/sh15ham0)  
 [GitHub - sh1shamo](https://github.com/sh1shamo)
