@@ -20,6 +20,8 @@ E-Sys と BimmerUtility で見たときとで i-Step のバージョンが違う
 <br>
 ![E-Sys で見たときの i-Step バージョン](\img\img4articles\2025\2025-12\2025-12-31-BMW_how-to-find_istep_version\i-Step_E-Sys.png){: .img-fluid}<br>
 <br>
+<font color="red">※追記: 見るべき場所が違いました。詳細は後述。</font><br>
+<br>
 ## 解決策<br>
 iDrive のメニューから個人設定を USB メモリにエクスポートすると、エクスポートされたファイル内に i-Step のバージョンが記録されるため、そこから確認することができました。<br>
 <br>
@@ -49,3 +51,12 @@ iDrive のメニューから個人設定を USB メモリにエクスポート�
 <br>
 タイトル: How-to: Find out your ISTEP version (guide)<br>
 URL: [https://f87.bimmerpost.com/forums/showthread.php?t=1638904](https://f87.bimmerpost.com/forums/showthread.php?t=1638904)<br>
+<br>
+## 追記: E-Sys での確認方法<br>
+<br>
+どうやら見るべき場所が違ったようで、正しい場所で確認すると BimmerUtility のそれとも一致しました。<br>
+<br>
+▼ 確認箇所
+[Expert Mode] > [VCM] > [Master] タブ > "I-Steps" 欄で [Read] 押下すると "Integration steps (ECU)" から確認できるようでした。<br>
+<br>
+![正しい E-Sys で見たときの i-Step バージョン](\img\img4articles\2025\2025-12\2025-12-31-BMW_how-to-find_istep_version\i-Step_E-Sys-trueVersion.png){: .img-fluid}
