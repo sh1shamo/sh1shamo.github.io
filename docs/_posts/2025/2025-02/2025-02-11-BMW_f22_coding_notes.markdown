@@ -89,7 +89,7 @@ aktiv
 詳細は個別記事参照。
 ```
   
-#### [ウェルカムライト (フロント; 徐々に点灯, 眉毛消灯)]  
+#### [ウェルカムライト (フロント; 徐々に点灯)]  
 ```
 <コーディング項目>
 1: FEM_BODY / 3062 LceLampMapping1 / MAPPING_STANDL_V_L_PART_OF_WL
@@ -100,12 +100,16 @@ aktiv
 <設定値>
 1: soft_on
 2: soft_on
-3: not_active
-4: not_active
+3: soft_on
+4: soft_on
 
 <備考>
 それぞれ 1 ～ 2 がリング部分、 3 ～ 4 が眉毛部分。
-前者は 'hard_on' (普通の点灯) から 'soft_on' (徐々に明るくなる点灯) に変更。後者は not_active で非点灯に変更。
+'hard_on' (普通の点灯) から 'soft_on' (徐々に明るくなる点灯) に変更。
+
+// 眉毛部分を消灯したい場合は 3 ～ 4 について、代わりに以下のとおり設定する。
+3: not_active
+4: not_active
 ```
   
 #### [ウェルカムライト (リア; 徐々に点灯)]  
@@ -150,35 +154,27 @@ HU_NBT2 / 3000 HMI / M_VEHICLE
 <設定値>
 aktiv
 ```
-  
-#### [スモールライト / ヘッドライト (眉毛消灯)]  
+    
+#### [デイライト (フロント)]  
 ```
 <コーディング項目>
-1: FEM_BODY / 3063 LceLampMapping2 / MAPPING_DESIGNL_L_FUNCTION
-2: FEM_BODY / 3063 LceLampMapping2 / MAPPING_DESIGNL_R_FUNCTION
+FEM_BODY / 3060 LceMaster / TFL_MODUS
 
 <設定値>
-1: 00
-2: 00
+tfl_s
 
 <備考>
-'01' → '00' で消灯
-```
-  
-#### [デイライト (フロント; 眉毛消灯)]  
-```
-<コーディング項目>
-1: FEM_BODY / 3060 LceMaster / TFL_MODUS
-2: FEM_BODY / 3063 LceLampMapping2 / MAPPING_UNIVERSAL_1_OUTPUT
-3: FEM_BODY / 3063 LceLampMapping2 / MAPPING_UNIVERSAL_2_OUTPUT
+眉毛部分を消灯する場合は、さらに以下の 2 箇所を設定する。
 
-<設定値>
-1: tfl_s
+-----
+(追加コーディング項目)
+1: FEM_BODY / 3063 LceLampMapping2 / MAPPING_UNIVERSAL_1_OUTPUT
+2: FEM_BODY / 3063 LceLampMapping2 / MAPPING_UNIVERSAL_2_OUTPUT
+
+(設定値)
+1: off
 2: off
-3: off
-
-<備考>
-1 だけだと眉毛も点灯。
+-----
 ```
   
 #### [デイライト (リア)]  
@@ -306,8 +302,23 @@ individual_sound
 ここはお好み。
 individual_sound > highpremium > hifi_system_harmankardon の順でドンシャリ度が高いらしく、だいたいこの 3 つのどれかにしている人が多い印象。
 ```
+
+#### [スモールライト / ヘッドライト (眉毛消灯)]  
+```
+<コーディング項目>
+1: FEM_BODY / 3063 LceLampMapping2 / MAPPING_DESIGNL_L_FUNCTION
+2: FEM_BODY / 3063 LceLampMapping2 / MAPPING_DESIGNL_R_FUNCTION
+
+<設定値>
+1: 00
+2: 00
+
+<備考>
+'01' → '00' で消灯
+```
   
 ## 更新履歴  
   
 2025/02/11: 記事作成  
-2026/01/02: 再整形、追記
+2026/01/02: 再整形、追記  
+2026/01/05: ヘッドライトの眉毛部分について、点灯・消灯の 2 パターンを記載他
